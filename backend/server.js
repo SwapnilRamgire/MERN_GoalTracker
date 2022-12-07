@@ -4,6 +4,7 @@ import * as dotenv from "dotenv";
 import mongoose from "mongoose";
 // importing routes
 import { Goals } from "./routes/goalRoutes.js";
+import { Users } from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -19,5 +20,6 @@ const app = express();
 
 app.use(express.json());
 app.use("/api/goals", Goals);
+app.use("/api/users", Users);
 
 app.listen(PORT, () => console.log(`Listening on port : ${PORT}`));
