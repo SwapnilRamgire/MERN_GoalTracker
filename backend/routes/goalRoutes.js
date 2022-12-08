@@ -6,10 +6,11 @@ import {
   putGoal,
   deleteGoals,
 } from "../controllers/goalController.js";
+import { protect } from "../middleware/authMiddleware.js";
 
-router.get("/", getGoal);
-router.post("/", postGoal);
-router.put("/:id", putGoal);
-router.delete("/:id", deleteGoals);
+router.get("/", protect, getGoal);
+router.post("/", protect, postGoal);
+router.put("/:id", protect, putGoal);
+router.delete("/:id", protect, deleteGoals);
 
 export { router as Goals };

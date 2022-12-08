@@ -15,7 +15,7 @@ const protect = async (req, res, next) => {
       next();
     } catch (error) {
       console.log(error);
-      return res.send(401).send("Not authorized");
+      return res.status(401).send("Not authorized");
     }
   }
 
