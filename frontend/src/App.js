@@ -1,9 +1,14 @@
+// importing the packages
+
+// importing components
+import Main from "./pages/Main";
+
 import "./styles/app.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello there</h1>
+    <div className="app">
+      <Main />
     </div>
   );
 }

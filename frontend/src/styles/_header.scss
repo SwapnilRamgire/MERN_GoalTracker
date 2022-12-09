@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 15vh;
+  border-bottom: 1px solid black;
+  margin-bottom: 1rem;
+  .logo {
+    display: flex;
+    flex: 1;
+    a {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+  .link-cont {
+    a {
+      margin: 0 10px;
+      svg {
+        transform: translateY(2px);
+      }
+    }
+  }
+}
