@@ -63,6 +63,12 @@ form input:hover {
   border-bottom: 1px solid #81ff81;
 }
 
+@media only screen and (max-width: 450px) {
+  .app {
+    width: 100vw;
+  }
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,7 +111,7 @@ header .link-cont a svg {
           transform: translateY(2px);
 }
 
-.register {
+.register-login {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,21 +126,27 @@ header .link-cont a svg {
   height: 50vh;
 }
 
-.register .heading {
+.register-login .heading {
   margin-bottom: 1rem;
 }
 
-.register .heading h3 {
+.register-login .heading h3 {
   font-weight: 400;
 }
 
-.register .form-cont {
+.register-login .form-cont {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.register .form-cont form input {
+.register-login .form-cont form input {
   margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .register-login {
+    width: 80%;
+  }
 }
 /*# sourceMappingURL=app.css.map */

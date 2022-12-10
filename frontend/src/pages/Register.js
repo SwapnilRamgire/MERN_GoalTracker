@@ -22,7 +22,7 @@ const Register = () => {
   };
   return (
     <div className="sub-cont">
-      <div className="register">
+      <div className="register-login">
         <div className="heading">
           <h1>
             <FaUserAlt /> Register
