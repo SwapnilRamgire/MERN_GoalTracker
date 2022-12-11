@@ -1,7 +1,14 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Login = () => {
+const Login = ({ setUser, user }) => {
+  const API_URL = "/api/users";
+  const navigate = useNavigate();
+
+  const [error, setError] = useState(false);
   const [loginData, setLoginData] = useState({
     userName: "",
     password: "",
@@ -15,13 +22,26 @@ const Login = () => {
     });
   };
 
-  const formSubmitHandler = (e) => {
+  const formSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(loginData);
+    try {
+      const response = await axios.post(API_URL + "/login", loginData);
+      if (response.data) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+        setUser(response.data);
+        navigate("/");
+      }
+    } catch (error) {
+      setError(true);
+      console.log(error);
+    }
   };
   return (
     <div className="sub-cont">
       <div className="register-login">
+        {error && (
+          <h1 className="error-box">Please enter accurate credentials.</h1>
+        )}
         <div className="heading">
           <h1>
             <FaSignInAlt /> Login
@@ -47,6 +67,9 @@ const Login = () => {
               placeholder="Enter password."
             />
             <button type="submit">Login</button>
+            <p>
+              Don't having an account? <Link to="/register">Register here</Link>
+            </p>
           </form>
         </div>
       </div>

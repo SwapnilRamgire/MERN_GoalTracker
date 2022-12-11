@@ -14,6 +14,30 @@ header {
       font-weight: 500;
     }
   }
+  .loggedLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    p {
+      font-size: 1rem;
+      margin-right: 1rem;
+    }
+    button {
+      padding: 0.5rem 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 400;
+      border-radius: 5px;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background: black;
+      color: white;
+    }
+    svg {
+      transform: translateY(2px);
+    }
+  }
   .link-cont {
     a {
       margin: 0 10px;

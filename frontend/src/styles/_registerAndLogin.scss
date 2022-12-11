@@ -16,7 +16,45 @@
       input {
         margin-bottom: 1rem;
       }
+      p {
+        margin-top: 1rem;
+        a {
+          margin: 0;
+          padding: 0;
+          color: rgb(64, 150, 221);
+        }
+      }
     }
+  }
+  .error-box {
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 1rem;
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid rgb(255, 47, 47);
+    color: rgb(255, 47, 47);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+  }
+  .success-box {
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 1rem;
+    background: rgba(0, 255, 0, 0.2);
+    border: 1px solid rgb(78, 185, 78);
+    color: rgb(78, 185, 78);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    animation: successAnim 1s infinite alternate-reverse;
+  }
+}
+
+@keyframes successAnim {
+  from {
+    background: rgba(0, 255, 0, 0.2);
+  }
+  to {
+    background: rgba(0, 255, 0, 0.4);
   }
 }
 
