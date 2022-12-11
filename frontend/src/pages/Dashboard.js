@@ -5,7 +5,6 @@ const Dashboard = ({ goals, setGoals, user }) => {
   const API_URL = "/api/goals";
   useEffect(() => {
     if (user) getGoals();
-    console.log("HERE SHIT");
   }, []);
   const getGoals = async () => {
     const config = {
