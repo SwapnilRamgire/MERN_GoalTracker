@@ -37,7 +37,6 @@ a {
 }
 
 form button {
-  width: 100%;
   padding: 0.5rem 0.7rem;
   font-size: 1rem;
   outline: none;
@@ -47,7 +46,6 @@ form button {
 }
 
 form input {
-  width: 100%;
   padding: 0.5rem 0.7rem;
   font-size: 1rem;
   outline: none;
@@ -149,7 +147,152 @@ header .link-cont a svg {
           transform: translateY(2px);
 }
 
+.dashboard .dash-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 10vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard .dash-header h1 {
+  font-weight: 500;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.dashboard .dash-header form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.dashboard .dash-header form button {
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 1px solid black;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.dashboard .dash-header form input {
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #e7e7e7;
+  margin-right: 1rem;
+}
+
+.dashboard .goals-cont {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 1rem;
+  overflow-y: auto;
+}
+
+.dashboard .goals-cont .goal-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vh;
+  padding: 1rem;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.dashboard .goals-cont .goal-card h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.dashboard .goals-cont .goal-card .button-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard .goals-cont .goal-card .button-content p {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.dashboard .goals-cont .goal-card .button-content button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  border: none;
+  margin-left: 1rem;
+  background: white;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.dashboard .goals-cont .goal-card .button-content button svg {
+  color: #ff3737;
+  font-weight: 200;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.dashboard .goals-cont .goal-card .button-content button:hover {
+  background: #ffcfcf;
+}
+
+.dashboard .no-goals {
+  width: 100%;
+  font-weight: 200;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
 .register-login {
+  position: relative;
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -161,6 +304,7 @@ header .link-cont a svg {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
   height: 50vh;
 }
 
@@ -179,7 +323,18 @@ header .link-cont a svg {
 }
 
 .register-login .form-cont form input {
+  width: 100%;
   margin-bottom: 1rem;
+}
+
+.register-login .form-cont form button {
+  width: 100%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.register-login .form-cont form button:hover {
+  background: #001f0c;
 }
 
 .register-login .form-cont form p {
@@ -213,6 +368,42 @@ header .link-cont a svg {
   border-radius: 5px;
   margin-bottom: 0.5rem;
   animation: successAnim 1s infinite alternate-reverse;
+}
+
+.register-login::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-left: 1px solid black;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 5;
+  -webkit-animation: reveal 1s ease;
+          animation: reveal 1s ease;
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    scale: 1.5;
+    left: 0;
+  }
+  100% {
+    scale: 1;
+    left: 100%;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    scale: 1.5;
+    left: 0;
+  }
+  100% {
+    scale: 1;
+    left: 100%;
+  }
 }
 
 @-webkit-keyframes successAnim {

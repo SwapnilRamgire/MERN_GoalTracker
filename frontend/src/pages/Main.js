@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 const Main = () => {
   const [user, setUser] = useState(null);
-  const [goals, setGoals] = useState(null);
+  const [goals, setGoals] = useState([]);
   useEffect(() => {
     const userFromLocalStorage = JSON.parse(localStorage.getItem("user"));
     if (userFromLocalStorage) setUser(userFromLocalStorage);

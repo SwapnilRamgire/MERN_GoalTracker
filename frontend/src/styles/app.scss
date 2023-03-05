@@ -29,7 +29,7 @@ a {
 }
 form {
   button {
-    width: 100%;
+    // width: 100%;
     padding: 0.5rem 0.7rem;
     font-size: 1rem;
     outline: none;
@@ -38,7 +38,7 @@ form {
     color: white;
   }
   input {
-    width: 100%;
+    // width: 100%;
     padding: 0.5rem 0.7rem;
     font-size: 1rem;
     outline: none;
@@ -59,4 +59,5 @@ form {
   }
 }
 @import "./header";
+@import "./dashboard";
 @import "./registerAndLogin";
